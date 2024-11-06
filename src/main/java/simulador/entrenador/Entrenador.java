@@ -19,5 +19,38 @@ public class Entrenador {
         }
     }
     
+    public void entrenarPokemon(Pokemon pokemon){
+        if(pokemones.contains(pokemon)){
+            pokemon.entrenar();
+        }
+    }
+    public Pokemon prepararBatalla(){
+        if(!pokemones.isEmpty()){
+            Pokemon PokemonPelea=pokemones.get(0);
+            System.out.println(PokemonPelea+" ha sido escogido para la batalla");
+            return PokemonPelea;
+        }else{
+            System.out.println("No hay pokemones en tu equipo para participar en una batalla. \nAñade pokemones a la lista en el menu principal");
+            return null;
+        }
+    }
+    public void mostrarPokemones(){
+        System.out.println("Tienes "+ pokemones.size()+" pokemones");
+        for(Pokemon pokemon : pokemones){
+            System.out.println(pokemon.getNombre());
+        }
+    }
+    //Getters y Setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public List<Pokemon> getPokemones() {
+        return pokemones;
+    }
+
+    public void setPokemones(List<Pokemon> pokemones) {
+        this.pokemones = pokemones;
+    }
     
 }
