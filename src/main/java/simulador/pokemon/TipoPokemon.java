@@ -6,8 +6,6 @@ public enum TipoPokemon {
     
     
     
-   // public static double obtenerMultiplicadorDeDaño(TipoPokemon atacante, TipoPokemon defensor);
-        //double[][]= efectividad={
+   
     
-//}
 }
