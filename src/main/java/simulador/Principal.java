@@ -127,6 +127,7 @@ public class Principal {
                     entrenarPokemon(entrenador);
                     break;
                 case "4":
+                    iniciarBatalla();
                     return;
                 default:
                     System.out.println("Opcion no valida, ingrese de unevo otra opcion");
@@ -240,6 +241,55 @@ public class Principal {
         Pokemon nuevoPokemon = new Pokemon(moteNuevoPokemon, saludNuevoPokmeon, ataqueNuevoPokemon, tipo, estado) {};
         pokemones.add(nuevoPokemon);
         System.out.println("Nuevo pokemon registrado a tu pokedex: "+moteNuevoPokemon+" \nSalud: "+saludNuevoPokmeon+"\nAtaque: "+ataqueNuevoPokemon + "\nTipo: "+tipo);
+    }
+    public static void iniciarBatalla(){
+        if(entrenadores.size()<=2){
+            System.out.println("Deben haber minimo 2 entrenadores para hacer una batalla");
+        }else{
+            System.out.println("Seleccione el primer entrenador: ");
+            Entrenador oponente1=seleEntrenadorBatalla();
+            if(oponente1==null)return;
+            System.out.println("Selecciona el segundo entrenador: ");
+            Entrenador oponente2=seleEntrenadorBatalla();
+            if(oponente2==null)return;
+            System.out.println(oponente1.getNombre()+" Selecciona tu pokemon: ");
+            Pokemon pokemon1=seleccionarPokemonOp(oponente1);
+            if(pokemon1==null)return;
+            System.out.println(oponente2.getNombre()+" Selecciona tu pokemon");
+            Pokemon pokemon2=seleccionarPokemonOp(oponente2);
+            if(pokemon2==null)return;
+            
+            System.out.println("Preparen sus asientos por que la batalla entre "+pokemon1.getNombre()+" y"+pokemon2.getNombre()+" va a empezar!");
+            Batalla batalla=new Batalla();
+            batalla.iniciarBatalla(pokemon1, pokemon2);
+        }
+    }
+    private static Entrenador seleEntrenadorBatalla(){
+        listaEntrenadores();
+        System.out.println("Selecciona el entrenador por su numero: ");
+        int numOponente=sc.nextInt()-1;
+        if(numOponente>=0&&numOponente<entrenadores.size()){
+            return entrenadores.get(numOponente);
+        }else{
+            System.out.println("Numero de entrenador no valido");
+            return null;
+        }
+    }
+    private static Pokemon seleccionarPokemonOp(Entrenador entrenador){
+        List<Pokemon> equipo = entrenador.getPokemones();
+        for(int i=0;i<equipo.size();i++){
+            Pokemon pokemon =equipo.get(i);
+             System.out.println((i + 1) + "- " + pokemon.getNombre() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
+        }
+        System.out.print("Selecciona un pokemon por numero: ");
+        int numPoke=sc.nextInt()-1;
+        if(numPoke>=0& numPoke<equipo.size()){
+            return equipo.get(numPoke);
+        }else{
+            System.out.println("Nuemro de pokemon no valido.");
+            return null;
+        }
+        
     }
 }
 
