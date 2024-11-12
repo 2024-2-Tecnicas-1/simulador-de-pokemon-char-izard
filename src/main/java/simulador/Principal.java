@@ -25,7 +25,13 @@ public class Principal {
     private static final List<Pokemon> pokemones = new ArrayList<>(); 
     
     public static void main(String[] args) {
-        pokemones.add(new Cubone());
+       
+        pokemones.add(new Hitmonchan());  // Lucha
+        pokemones.add(new Ponyta());      // Fuego
+        pokemones.add(new Cubone());     // Tierra
+        pokemones.add(new Doduo());      // Normal/Volador
+        pokemones.add(new Ekans());      // Veneno
+        
         menuPrincipal();
     }
     public static void menuPrincipal(){
@@ -151,7 +157,7 @@ public class Principal {
         System.out.println("Agregar un nuevo Pokemon al equipo de " + entrenador.getNombre());
         for (int i = 0; i < pokemones.size(); i++) {
             Pokemon pokemon = pokemones.get(i);
-            System.out.println((i + 1) + ". " + pokemon.getNombre() + "\nTipo: " + pokemon.getTipo() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
+            System.out.println((i + 1) + ". " + pokemon.getNombre() + "\nTipo: " + pokemon.getTipos() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
         }
         System.out.println("Selecciona un Pokemon por numero");
         int numPok = sc.nextInt() - 1;
@@ -211,7 +217,7 @@ public class Principal {
         System.out.println("Estos son los pokemones registrados: ");
         for(int i =0; i<pokemones.size();i++){
             Pokemon pokemon =pokemones.get(i);
-            System.out.println((i + 1) + "- " + pokemon.getNombre() + "\nTipo: " + pokemon.getTipo() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
+            System.out.println((i + 1) + "- " + pokemon.getNombre() + "\nTipo: " + pokemon.getTipos() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
         }
     }
     private static void registrarNuevoPokemon(){
