@@ -1,27 +1,41 @@
 package simulador.pokemon;
+import java.util.List;
+
 
 public abstract class Pokemon {
 
     private String nombre;
     private int salud;
     private int puntosDeAtaque;
-    private TipoPokemon tipo;
+    private TipoPokemon tipo1;
+    private TipoPokemon tipo2;
+
     private Estado estado;
 
-    public Pokemon(String nombre, int salud, int puntosDeAtaque, TipoPokemon tipo, Estado estado) {
-        this.nombre = nombre;
+    public Pokemon(String nombre, int salud, int puntosDeAtaque, TipoPokemon tipo1, Estado estado) {
+        this(nombre,salud,puntosDeAtaque,tipo1,null,estado);
+    }
+    public Pokemon(String nombre,int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado){
+    this.nombre = nombre;
         this.salud = salud;
         this.puntosDeAtaque = puntosDeAtaque;
-        this.tipo = tipo;
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
         this.estado = estado;
     }
 
     public void atacar(Pokemon oponente) {
-        int daño = oponente.getPuntosDeAtaque() - oponente.getSalud();
-        if (daño < 0) {
-            daño = 0;
-        }
+        // Se obtiene el multiplicador de daño usando los tipos del atacante y el defensor
+        double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo1, this.tipo2, oponente.getTipo1(), oponente.getTipo2());
+        
+        // Se calcula el daño
+        int daño = (int)(this.puntosDeAtaque * multiplicador);
+        
+        // El oponente recibe el daño
         oponente.recibirDaño(daño);
+        
+        // Se imprime la información del ataque
+        System.out.println(this.nombre + " ataca a " + oponente.getNombre() + " causando " + daño + " de daño.");
     }
 
     public void recibirDaño(int daño) {
@@ -45,8 +59,18 @@ public abstract class Pokemon {
         return puntosDeAtaque;
     }
 
-    public TipoPokemon getTipo() {
-        return tipo;
+     public TipoPokemon getTipo1() {
+        return tipo1;
+    }
+    public TipoPokemon getTipo2(){
+        return tipo2;
+    }
+    public TipoPokemon[] getTipos() {
+        if (tipo2 != null) {
+            return new TipoPokemon[] {tipo1, tipo2}; // Si tiene dos tipos
+        } else {
+            return new TipoPokemon[] {tipo1}; // Si solo tiene un tipo
+        }
     }
 
     public Estado getEstado() {
@@ -65,12 +89,21 @@ public abstract class Pokemon {
         this.puntosDeAtaque = puntosDeAtaque;
     }
 
-    public void setTipo(TipoPokemon tipo) {
-        this.tipo = tipo;
+    public void setTipo1(TipoPokemon tipo1) {
+        this.tipo1 = tipo1;
+    }
+    public void seTipo2 (TipoPokemon tipo2){
+    this.tipo2 = tipo2;
     }
 
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
 
+
 }
+ 
+
+    
+    // TODO: Aquí va tu código
+
