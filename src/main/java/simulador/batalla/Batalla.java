@@ -2,6 +2,7 @@ package simulador.batalla;
 import simulador.pokemon.Pokemon;
 
 public class Batalla {
+
     
     
     public void iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
@@ -15,4 +16,5 @@ public class Batalla {
             System.out.println(pokemon2.getNombre()+" Ha sido derrotado "+pokemon1.getNombre()+" Es el vencedor");
         }
     }
+
 }
