@@ -1,5 +1,6 @@
 package simulador;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.List;
 import simulador.batalla.Batalla;
@@ -62,7 +63,7 @@ public class Principal {
         System.out.println("1. Registrar un nuevo entrenador");
         System.out.println("2. Ver lista de entrenadores");
         System.out.println("3. Seleccionar un entrenador");
-        System.out.println("4.Volver al menú principal");
+        System.out.println("4.Volver al menu principal");
         String op = sc.next();
         switch (op) {
             case "1":
@@ -217,7 +218,7 @@ public class Principal {
         System.out.println("Estos son los pokemones registrados: ");
         for(int i =0; i<pokemones.size();i++){
             Pokemon pokemon =pokemones.get(i);
-            System.out.println((i + 1) + "- " + pokemon.getNombre() + "\nTipo: " + pokemon.getTipos() + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
+            System.out.println((i + 1) + "- " + pokemon.getNombre() + "\nTipo: " + Arrays.toString(pokemon.getTipos()) + "\nSalud: " + pokemon.getSalud() + "\nAtaque: " + pokemon.getPuntosDeAtaque());
         }
     }
     private static void registrarNuevoPokemon(){

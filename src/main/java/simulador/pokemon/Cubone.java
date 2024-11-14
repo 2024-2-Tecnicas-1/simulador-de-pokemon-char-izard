@@ -7,7 +7,7 @@ public class Cubone extends Pokemon {
         
         super("Cubone", 50, 50,TipoPokemon.TIERRA, Estado.Normal);
     }
-     @Override
+ 
     public void atacar(Pokemon oponente) {
         
         TipoPokemon tipoAtacante1 = this.getTipo1();
