@@ -4,7 +4,7 @@ package simulador.pokemon;
 
 public class Ekans extends Pokemon {
     public Ekans(){
-     super("Ekans", 35, 60, TipoPokemon.VENENO, Estado.Normal);
+     super("Ekans", 35, 60, TipoPokemon.VENENO,TipoPokemon.NORMAL, Estado.Normal);
     }
 
     @Override

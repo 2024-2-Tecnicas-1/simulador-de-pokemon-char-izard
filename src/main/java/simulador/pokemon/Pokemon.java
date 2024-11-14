@@ -1,5 +1,4 @@
 package simulador.pokemon;
-import java.util.List;
 
 
 public abstract class Pokemon {
@@ -9,14 +8,10 @@ public abstract class Pokemon {
     private int puntosDeAtaque;
     private TipoPokemon tipo1;
     private TipoPokemon tipo2;
-
     private Estado estado;
 
-    public Pokemon(String nombre, int salud, int puntosDeAtaque, TipoPokemon tipo1, Estado estado) {
-        this(nombre,salud,puntosDeAtaque,tipo1,null,estado);
-    }
-    public Pokemon(String nombre,int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado){
-    this.nombre = nombre;
+    public Pokemon(String nombre, int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado) {
+        this.nombre = nombre;
         this.salud = salud;
         this.puntosDeAtaque = puntosDeAtaque;
         this.tipo1 = tipo1;

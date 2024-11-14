@@ -4,9 +4,13 @@ package simulador.pokemon;
 
 public class Lickitung extends Pokemon {
     public Lickitung(){
-    super("Lickitung",90,55,TipoPokemon.NORMAL,Estado.Normal);
+    super("Lickitung",90,55,TipoPokemon.NORMAL,TipoPokemon.NORMAL,Estado.Normal);
     
    }
+
+    public Lickitung(String nombre, int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado) {
+        super(nombre, salud, PuntosDeAtaque, tipo1, tipo2, estado);
+    }
     
 @Override
 public void atacar(Pokemon oponente) {

@@ -4,7 +4,7 @@ package simulador.pokemon;
 
 public class Goldeen extends Pokemon {
     public Goldeen(){
-    super ("Golden",45,67,TipoPokemon.AGUA,Estado.Normal);
+    super ("Golden",45,67,TipoPokemon.AGUA,TipoPokemon.NORMAL,Estado.Normal);
     }  
     @Override
     public void atacar(Pokemon oponente) {

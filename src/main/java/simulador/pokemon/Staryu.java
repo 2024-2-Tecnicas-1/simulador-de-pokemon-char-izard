@@ -4,7 +4,7 @@ package simulador.pokemon;
 
 public class Staryu extends Pokemon {
     public Staryu(){
-    super("Staryu",30,45,TipoPokemon.AGUA,Estado.Normal);
+    super("Staryu",30,45,TipoPokemon.AGUA,TipoPokemon.NORMAL,Estado.Normal);
     
     }
      @Override

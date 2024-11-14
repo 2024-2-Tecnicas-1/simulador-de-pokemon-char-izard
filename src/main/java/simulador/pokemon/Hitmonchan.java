@@ -5,7 +5,7 @@ package simulador.pokemon;
 public class Hitmonchan extends Pokemon {
     public Hitmonchan() {
         
-        super("Hitmonchan", 50, 105, TipoPokemon.LUCHA, Estado.Normal);
+        super("Hitmonchan", 50, 105, TipoPokemon.LUCHA, TipoPokemon.NORMAL,Estado.Normal);
     }
 
     

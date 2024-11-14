@@ -6,8 +6,12 @@ package simulador.pokemon;
 public class Ponyta extends Pokemon {
     public Ponyta() {
      
-        super("Ponyta", 50, 85, TipoPokemon.FUEGO, Estado.Normal);
+        super("Ponyta", 50, 85, TipoPokemon.FUEGO,TipoPokemon.NORMAL, Estado.Normal);
 }
+
+    public Ponyta(String nombre, int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado) {
+        super(nombre, salud, PuntosDeAtaque, tipo1, tipo2, estado);
+    }
     @Override
     
     public void atacar(Pokemon oponente) {

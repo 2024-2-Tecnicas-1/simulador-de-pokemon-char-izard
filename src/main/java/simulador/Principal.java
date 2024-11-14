@@ -236,17 +236,20 @@ public class Principal {
         }
         System.out.print("Selecciona el numero de tipo de pokemon: ");
         int tipoSeleccionado=sc.nextInt()-1;
-        TipoPokemon tipo;
+        TipoPokemon tipo1;
+        TipoPokemon tipo2;
         if(tipoSeleccionado>=0&tipoSeleccionado<tipos.length){
-            tipo=tipos[tipoSeleccionado];
+            tipo1=tipos[tipoSeleccionado];
+            tipo2=tipos[tipoSeleccionado];
         }else{
             System.out.println("Numero de tipo no valido. Se le asignara tipo NORMAL por defecto");
-            tipo=TipoPokemon.NORMAL;
+            tipo1=TipoPokemon.NORMAL;
+            tipo2=TipoPokemon.NORMAL;
         }
         Estado estado =Estado.Normal;
-        Pokemon nuevoPokemon = new Pokemon(moteNuevoPokemon, saludNuevoPokmeon, ataqueNuevoPokemon, tipo, estado) {};
+        Pokemon nuevoPokemon = new Pokemon(moteNuevoPokemon, saludNuevoPokmeon, ataqueNuevoPokemon, tipo1,tipo2, estado) {};
         pokemones.add(nuevoPokemon);
-        System.out.println("Nuevo pokemon registrado a tu pokedex: "+moteNuevoPokemon+" \nSalud: "+saludNuevoPokmeon+"\nAtaque: "+ataqueNuevoPokemon + "\nTipo: "+tipo);
+        System.out.println("Nuevo pokemon registrado a tu pokedex: "+moteNuevoPokemon+" \nSalud: "+saludNuevoPokmeon+"\nAtaque: "+ataqueNuevoPokemon + "\nTipo: "+tipo1+" "+tipo2);
     }
     public static void iniciarBatalla(){
         if(entrenadores.size()<=2){

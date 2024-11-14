@@ -4,7 +4,7 @@ package simulador.pokemon;
 
 public class Electrode extends Pokemon{
     public Electrode(){
-        super("Electrode",60,50,TipoPokemon.ELECTRICO,Estado.Normal);
+        super("Electrode",60,50,TipoPokemon.ELECTRICO,TipoPokemon.NORMAL,Estado.Normal);
     }
     @Override
     public void atacar(Pokemon oponente) {

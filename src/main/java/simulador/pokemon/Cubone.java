@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Cubone extends Pokemon {
     public Cubone() {
         
-        super("Cubone", 50, 50,TipoPokemon.TIERRA, Estado.Normal);
+        super("Cubone", 50, 50,TipoPokemon.TIERRA,TipoPokemon.NORMAL, Estado.Normal);
     }
      @Override
     public void atacar(Pokemon oponente) {
