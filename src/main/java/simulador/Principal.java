@@ -32,6 +32,12 @@ public class Principal {
         pokemones.add(new Cubone());     // Tierra
         pokemones.add(new Doduo());      // Normal/Volador
         pokemones.add(new Ekans());      // Veneno
+        pokemones.add(new Goldeen());   // Agua
+        pokemones.add(new Paras());      //Bicho/Planta
+        pokemones.add(new Electrode());  //Electrico
+        pokemones.add(new Staryu());     //Agua
+        pokemones.add(new Lickitung());  //Normal
+        
         
         menuPrincipal();
     }
