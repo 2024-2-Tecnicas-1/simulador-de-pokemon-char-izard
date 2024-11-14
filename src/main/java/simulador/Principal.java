@@ -50,6 +50,7 @@ public class Principal {
             System.out.println("2. Gestionar Pokemones");
             System.out.println("3. Iniciar Batalla");
             System.out.println("4. Salir");
+            System.out.println("======================================================");
             String op=sc.next();
             switch(op){
                 case "1":
@@ -65,11 +66,12 @@ public class Principal {
     public static void gestionarEntrenadores() {
         System.out.println("""
                            
-                           =================== Gestionar entrenadores===================""");
+                           =================== Gestionar entrenadores ===================""");
         System.out.println("1. Registrar un nuevo entrenador");
         System.out.println("2. Ver lista de entrenadores");
         System.out.println("3. Seleccionar un entrenador");
         System.out.println("4.Volver al menu principal");
+        System.out.println("======================================================");
         String op = sc.next();
         switch (op) {
             case "1":
@@ -94,10 +96,12 @@ public class Principal {
     }
 
     public static void listaEntrenadores() {
+        System.out.println("====================== Entrenadores ==============================");
         if (entrenadores.isEmpty()) {
             System.out.println("No hay entrenadores, dirigite al menu y registra uno nuevo");
         } else {
             for (int i = 0; i < entrenadores.size(); i++) {
+                
                 System.out.println((i+1)+". "+entrenadores.get(i).getNombre());
             }
         }
@@ -204,6 +208,7 @@ public class Principal {
             System.out.println("1. Ver todos los pokemones registrados");
             System.out.println("2. Registrar nuevo Pokemon");
             System.out.println("3. Volver al menu principal");
+            System.out.println("======================================================");
             String op=sc.next();
             switch(op){
                 case "1":
@@ -221,6 +226,7 @@ public class Principal {
         }
     }
     private static void verPokemonesRegistrados(){
+        System.out.println("======================================================");
         System.out.println("Estos son los pokemones registrados: ");
         for(int i =0; i<pokemones.size();i++){
             Pokemon pokemon =pokemones.get(i);
@@ -228,6 +234,7 @@ public class Principal {
         }
     }
     private static void registrarNuevoPokemon(){
+        System.out.println("======================================================");
         System.out.println("Registrar un nuevo Pokemon");
         System.out.print("Ingrese el mote del pokmeon: ");
         String moteNuevoPokemon=sc.next();
