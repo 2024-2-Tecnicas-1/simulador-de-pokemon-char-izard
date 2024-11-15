@@ -5,11 +5,15 @@ package simulador.pokemon;
 public class Hitmonchan extends Pokemon {
     public Hitmonchan() {
         
+<<<<<<< HEAD
         super("Hitmonchan", 50, 105, TipoPokemon.LUCHA, TipoPokemon.NORMAL,Estado.Normal);
+=======
+        super("Hitmonchan", 50,105, TipoPokemon.LUCHA, Estado.Normal);
+>>>>>>> origin/master
     }
 
     
-     @Override
+   
     public void atacar(Pokemon oponente) {
        
         TipoPokemon tipoAtacante1 = this.getTipo1();
