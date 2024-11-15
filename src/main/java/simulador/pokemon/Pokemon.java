@@ -1,8 +1,5 @@
 package simulador.pokemon;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 public abstract class Pokemon {
 
@@ -13,13 +10,12 @@ public abstract class Pokemon {
     private TipoPokemon tipo2;
     private Estado estado;
 
-<<<<<<< HEAD
-=======
+
     public Pokemon(String nombre, int salud, int puntosDeAtaque, TipoPokemon tipo1, Estado estado) {
         this(nombre, salud, puntosDeAtaque, tipo1, null, estado);
     }
 
->>>>>>> origin/master
+
     public Pokemon(String nombre, int salud, int PuntosDeAtaque, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado) {
         this.nombre = nombre;
         this.salud = salud;
@@ -111,7 +107,3 @@ public abstract class Pokemon {
     }
 
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master

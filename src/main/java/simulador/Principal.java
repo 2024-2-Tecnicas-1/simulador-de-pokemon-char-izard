@@ -261,7 +261,7 @@ public class Principal {
             System.out.println((i + 1) + ". " + tipos[i]);
         }
         System.out.print("Selecciona el numero de tipo de pokemon: ");
-<<<<<<< HEAD
+
         int tipoSeleccionado=sc.nextInt()-1;
         TipoPokemon tipo1;
         TipoPokemon tipo2;
@@ -277,22 +277,14 @@ public class Principal {
         Pokemon nuevoPokemon = new Pokemon(moteNuevoPokemon, saludNuevoPokmeon, ataqueNuevoPokemon, tipo1,tipo2, estado) {};
         pokemones.add(nuevoPokemon);
         System.out.println("Nuevo pokemon registrado a tu pokedex: "+moteNuevoPokemon+" \nSalud: "+saludNuevoPokmeon+"\nAtaque: "+ataqueNuevoPokemon + "\nTipo: "+tipo1+" "+tipo2);
-=======
-        int tipoSeleccionado = sc.nextInt() - 1;
-        TipoPokemon tipo;
-        if (tipoSeleccionado >= 0 & tipoSeleccionado < tipos.length) {
-            tipo = tipos[tipoSeleccionado];
-        } else {
-            System.out.println("Numero de tipo no valido. Se le asignara tipo NORMAL por defecto");
-            tipo = TipoPokemon.NORMAL;
-        }
-        Estado estado = Estado.Normal;
-        Pokemon nuevoPokemon = new Pokemon(moteNuevoPokemon, saludNuevoPokmeon, ataqueNuevoPokemon, tipo, estado) {
-        };
+
+      
+       
+        
         pokemones.add(nuevoPokemon);
         System.out.println("Nuevo pokemon registrado a tu pokedex: " + moteNuevoPokemon + " \nSalud: "
-                + saludNuevoPokmeon + "\nAtaque: " + ataqueNuevoPokemon + "\nTipo: " + tipo);
->>>>>>> origin/master
+                + saludNuevoPokmeon + "\nAtaque: " + ataqueNuevoPokemon + "\nTipo: " + tipos);
+
     }
 
     public static void iniciarBatalla() {

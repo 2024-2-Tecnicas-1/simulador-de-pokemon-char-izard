@@ -2,13 +2,12 @@ package simulador.pokemon;
 
 public class Cubone extends Pokemon {
     public Cubone() {
-<<<<<<< HEAD
-        
-        super("Cubone", 50, 50,TipoPokemon.TIERRA,TipoPokemon.NORMAL, Estado.Normal);
-=======
 
-        super("Cubone", 50, 50, TipoPokemon.TIERRA, Estado.Normal);
->>>>>>> origin/master
+        super("Cubone", 50, 50,TipoPokemon.TIERRA,TipoPokemon.NORMAL, Estado.Normal);
+
+
+        
+
     }
 
     public void atacar(Pokemon oponente) {
