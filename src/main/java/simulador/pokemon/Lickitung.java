@@ -32,16 +32,13 @@ public void atacar(Pokemon oponente) {
     }
 
     // Calcular el daño final
-    int daño = (int) (this.getPuntosDeAtaque() * multiplicador);
+        int daño = (int) (this.getPuntosDeAtaque() * multiplicador);
 
-    // Aplicar el daño al oponente
-    oponente.recibirDaño(daño);
+        // Aplicar el daño al oponente
+        oponente.recibirDaño(daño);
 
-    // Mostrar el mensaje de ataque
-    System.out.println(this.getNombre() + " ataca a " + oponente.getNombre() + " causando " + daño + " de daño.");
+    }
 }
-}
-
 
 
 

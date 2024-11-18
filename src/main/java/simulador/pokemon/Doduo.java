@@ -19,15 +19,9 @@ public class Doduo extends Pokemon {
 
         double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(tipoAtacante1, tipoAtacante2, tipoDefensor1, tipoDefensor2);
 
-       
         int daño = (int) (this.getPuntosDeAtaque() * multiplicador);
 
-       
         oponente.recibirDaño(daño);
 
-   
-        System.out.println(this.getNombre() + " ataca a " + oponente.getNombre() + " causando " + daño + " de daño.");
     }
 }
-
-

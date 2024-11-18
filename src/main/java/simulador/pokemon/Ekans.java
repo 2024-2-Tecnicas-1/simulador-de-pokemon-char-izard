@@ -31,7 +31,7 @@ public class Ekans extends Pokemon {
 
         oponente.recibirDaño(daño);
 
-        System.out.println(this.getNombre() + " ataca a " + oponente.getNombre() + " causando " + daño + " de daño.");
+        
     }
 }
     
