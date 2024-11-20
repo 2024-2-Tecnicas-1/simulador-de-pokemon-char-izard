@@ -1,10 +1,11 @@
 package simulador.entrenador;
-
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import simulador.pokemon.Pokemon;
 
-public class Entrenador {
+public class Entrenador implements Serializable{
+    private static final long serialVersionUID = 1L;
     private final String nombre;
     private List<Pokemon> pokemones;
     public static Pokemon pokemon;

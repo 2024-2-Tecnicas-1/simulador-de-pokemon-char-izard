@@ -1,5 +1,8 @@
 package simulador;
-
+import java.io.File; 
+import simulador.util.ArchivoUtil; 
+import java.io.IOException;  
+import java.util.List;  
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -27,20 +30,69 @@ public class Principal {
     private static final List<Pokemon> pokemones = new ArrayList<>();
 
     public static void main(String[] args) {
+        File archivoEntrenadores = new File("entrenadores.dat");
+        
+         inicializarPokemones();
 
-        pokemones.add(new Hitmonchan()); // Lucha
-        pokemones.add(new Ponyta()); // Fuego
-        pokemones.add(new Cubone()); // Tierra
-        pokemones.add(new Doduo()); // Normal/Volador
-        pokemones.add(new Ekans()); // Veneno
-        pokemones.add(new Goldeen()); // Agua
-        pokemones.add(new Paras()); // Bicho/Planta
-        pokemones.add(new Electrode()); // Electrico
-        pokemones.add(new Staryu()); // Agua
-        pokemones.add(new Lickitung()); // Normal
+    
+    if (archivoEntrenadores.exists() && archivoEntrenadores.length() > 0) {
+       
+        System.out.println("¿Quieres trabajar con los datos guardados o iniciar desde cero?");
+        System.out.println("1. Trabajar con los datos guardados.");
+        System.out.println("2. Iniciar desde cero.");
+        String opcion = sc.next();
 
-        menuPrincipal();
+        if (opcion.equals("1")) {
+           
+            List<?> datosCargados = ArchivoUtil.cargarDatos("entrenadores.dat");
+
+            
+            if (datosCargados != null) {
+                try {
+                    
+                    List<Entrenador> entrenadoresCargados = (List<Entrenador>) datosCargados;
+                    entrenadores.addAll(entrenadoresCargados);
+                    System.out.println("Datos cargados correctamente.");
+                } catch (ClassCastException e) {
+                    System.out.println("Error al cargar los datos. El formato del archivo no es válido.");
+                }
+            } else {
+                System.out.println("No se encontraron datos guardados. Iniciando desde cero.");
+                inicializarEntrenadores();
+            }
+        } else {
+            System.out.println("Iniciando desde cero...");
+            inicializarEntrenadores();
+        }
+    } else {
+        
+        System.out.println("No se encontraron datos guardados. Iniciando desde cero...");
+        inicializarEntrenadores();
     }
+
+    
+    menuPrincipal();
+}
+    
+private static void inicializarPokemones() {
+    
+    pokemones.clear();  // Limpia la lista de pokemones antes de agregar los nuevos
+    pokemones.add(new Hitmonchan()); // Lucha
+    pokemones.add(new Ponyta()); // Fuego
+    pokemones.add(new Cubone()); // Tierra
+    pokemones.add(new Doduo()); // Normal/Volador
+    pokemones.add(new Ekans()); // Veneno
+    pokemones.add(new Goldeen()); // Agua
+    pokemones.add(new Paras()); // Bicho/Planta
+    pokemones.add(new Electrode()); // Electrico
+    pokemones.add(new Staryu()); // Agua
+    pokemones.add(new Lickitung()); // Normal
+}
+private static void inicializarEntrenadores() {
+    entrenadores.clear();  // Asegura que no haya datos anteriores
+    // Aquí se pueden agregar entrenadores predeterminados si se desea
+    System.out.println("Iniciando el registro de entrenadores...");
+}
 
     public static void menuPrincipal() {
         while (true) {
@@ -62,6 +114,19 @@ public class Principal {
                     break;
                 case "3":
                     iniciarBatalla();
+                case "4":
+                    // Aquí puedes llamar a la opción de guardar antes de salir
+                    System.out.println("¿Quieres guardar los datos antes de salir?");
+                    System.out.println("1. Sí");
+                    System.out.println("2. No");
+                    String guardarDatos = sc.next();
+                    if (guardarDatos.equals("1")) {
+                        ArchivoUtil.guardarDatos(entrenadores, "entrenadores.dat");
+                    }
+                    System.out.println("Saliendo del programa...");
+                    return; // Salir del programa
+                default:
+                    System.out.println("Opción no válida, por favor selecciona otra opción.");
             }
         }
     }

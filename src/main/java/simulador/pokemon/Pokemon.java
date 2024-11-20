@@ -1,8 +1,9 @@
 package simulador.pokemon;
+import java.io.Serializable;
 
 
-public abstract class Pokemon {
-
+public abstract class Pokemon implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String nombre;
     private int salud;
     private int puntosDeAtaque;
